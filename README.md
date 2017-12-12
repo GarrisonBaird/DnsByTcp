@@ -10,12 +10,12 @@ If you are not a pythoner, maybe you can try my another project [isayme/fuck_dns
 
 # How To Use #
 ## Linux User ##
-1. change your dns server to 127.0.0.1   
-$ vi /etc/resolve.conf  
-nameserver 127.0.0.1
-2. restart the network $ sudo /etc/init.d/networking restart
-3. run the script $ sudo python DnsByTcp.py
+1. change your dns server to `127.0.0.1`
+`$ vi /etc/resolve.conf`
+`nameserver 127.0.0.1`
+2. restart the network `$ sudo /etc/init.d/networking restart`
+3. run the script `$ sudo python3 DnsByTcp.py`
 
 ## Windows User ##
-1. change your dns server to 127.0.0.1, you can use my bat script([cdns.bat](https://github.com/isayme/DnsByTcp/blob/master/README.md "cdns.bat")) and follow its prompt message to change your dns server fastly.
-2. run the script $ sudo python DnsByTcp.py
+1. change your dns server to 127.0.0.1, you can use my bat script([cdns.bat](blob/master/cdns.bat)) and follow its prompt message to change your dns server fastly.
+2. run the script `python3.exe DnsByTcp.py` from an administrator privileged cmd/bat
