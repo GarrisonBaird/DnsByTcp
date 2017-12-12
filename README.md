@@ -17,5 +17,5 @@ If you are not a pythoner, maybe you can try my another project [isayme/fuck_dns
 3. run the script `$ sudo python3 DnsByTcp.py`
 
 ## Windows User ##
-1. change your dns server to 127.0.0.1, you can use my bat script([cdns.bat](blob/master/cdns.bat)) and follow its prompt message to change your dns server fastly.
+1. change your dns server to 127.0.0.1, you can use my bat script([cdns.bat](cdns.bat)) and follow its prompt message to change your dns server fastly.
 2. run the script `python3.exe DnsByTcp.py` from an administrator privileged cmd/bat
