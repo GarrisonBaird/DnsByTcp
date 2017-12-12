@@ -17,6 +17,9 @@ DNS_SERVS = ['8.8.8.8',
 DNS_PORT = 53           # default dns port 53
 TIMEOUT = 20            # set timeout 20 second
 
+LISTEN_ADDRESS = '127.0.0.1'
+LISTEN_PORT = 53
+
 SOCKS5_SERVER = '127.0.0.1'
 SOCKS5_PORT = 1080
 
@@ -61,9 +64,9 @@ class ThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
         
         
 if __name__ == "__main__":
-    print "---------------------------------------------------------------"
-    print "| To Use this tool, you must set your dns server to 127.0.0.1 |"
-    print "---------------------------------------------------------------"
+    print("---------------------------------------------------------------")
+    print("| To Use this tool, you must set your dns server to 127.0.0.1 |")
+    print("---------------------------------------------------------------")
     
-    dns_server = ThreadedUDPServer(('127.0.0.1', 53), ThreadedUDPRequestHandler)
+    dns_server = ThreadedUDPServer((LISTEN_ADDRESS, LISTEN_PORT), ThreadedUDPRequestHandler)
     dns_server.serve_forever()
