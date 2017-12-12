@@ -5,6 +5,8 @@ import threading
 import socketserver
 import random
 
+import socks
+
 # DNS Server List
 DNS_SERVS = ['8.8.8.8',
          '8.8.4.4',
@@ -13,13 +15,18 @@ DNS_SERVS = ['8.8.8.8',
          ]
 
 DNS_PORT = 53           # default dns port 53
-TIMEOUT = 20            # set timeout 5 second
+TIMEOUT = 20            # set timeout 20 second
+
+SOCKS5_SERVER = '127.0.0.1'
+SOCKS5_PORT = 1080
 
 def QueryDnsByTcp(dns_ip, dns_port, query_data):
     # make TCP DNS Frame
     tcp_frame = struct.pack('!h', len(query_data)) + query_data
     try:
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s = socks.socksocket(socket.AF_INET, socket.SOCK_STREAM)
+        s.set_proxy(socks.SOCKS5, SOCKS5_SERVER, SOCKS5_PORT)
+        #s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.settimeout(TIMEOUT) # set socket timeout
         s.connect((dns_ip, dns_port))
         s.send(tcp_frame)
